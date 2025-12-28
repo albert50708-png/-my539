@@ -1,10 +1,1 @@
 import streamlit as st
-import pandas as pd
-import sqlite3
-#1. 頁面基礎設定
-#st.set_page_config(page_title='539智慧抓牌', layout='wide') st.title('🎯 539 專業數據決策中心')
-#2. 資料庫讀取功能
-#def load_data(): try: conn = sqlite3.connect('lottery.db') df = pd.read_sql('SELECT * FROM DrawResults ORDER BY draw_id DESC', conn) return df except: return pd.DataFrame({ '期別': ['114000313', '114000312'], '獎號': ['01,15,19,28,38', '01,10,20,27,36'] })
-#3. UI 佈局區塊
-#tab1, tab2 = st.tabs(['📊 走勢看板', '🎲 智慧縮注'])
-#with tab1: st.subheader('近期開獎規律') df = load_data() st.dataframe(df, use_container_width=True)with tab2: st.subheader('39 樂合智慧縮注器') options = [f'{i:02d}' for i in range(1, 40)] nums = st.multiselect('選取號碼', options) if st.button('執行 t=3 縮注運算'): st.success(f'號碼 {nums} 已完成優化過濾！')
